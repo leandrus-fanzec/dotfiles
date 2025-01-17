@@ -10,10 +10,10 @@
 ffmpeg -f sndio -thread_queue_size 4096 -i snd/0 \
     -f sndio -thread_queue_size 4096 -i snd/mon \
     -filter_complex amix=inputs=2:duration=first:dropout_transition=2 \
-    -y -f x11grab -thread_queue_size 4096 -s 1366x768 -r 30 -i :0 \
+    -y -f x11grab -thread_queue_size 4096 -s 1280x800 -r 30 -i :0 \
     -c:v libx264rgb -crf 0 -b:v 10000k -preset ultrafast \
     -c:a flac -b:a 160k -ar 48000 \
-    "$HOME/Public/img/screen/$(date +%s).mkv"
+    "$HOME/$(date +%s).mkv"
 
 # mpv \
 #     --geometry=230x180 \
