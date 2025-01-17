@@ -3,6 +3,9 @@
 
 ---------
 
+[[img.png]]
+
+
 * LEAME
 
 Lo que aqui se encuentra es la configuracion personal que utilizo en
