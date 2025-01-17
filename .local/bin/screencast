@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Path utilizado personalmente.
+# Recuerde habilitar:
+# doas sysctl kern.audio.record=1
+# doas sysctl kern.video.record=1
+
+#trap 'kill 0' INT
+
+ffmpeg -f sndio -thread_queue_size 4096 -i snd/0 \
+    -f sndio -thread_queue_size 4096 -i snd/mon \
+    -filter_complex amix=inputs=2:duration=first:dropout_transition=2 \
+    -y -f x11grab -thread_queue_size 4096 -s 1366x768 -r 30 -i :0 \
+    -c:v libx264rgb -crf 0 -b:v 10000k -preset ultrafast \
+    -c:a flac -b:a 160k -ar 48000 \
+    "$HOME/Public/img/screen/$(date +%s).mkv"
+
+# mpv \
+#     --geometry=230x180 \
+#     --demuxer-lavf-format=video4linux2 \
+#     --demuxer-lavf-o-set=input_format=mjpeg \
+#     av://v4l2:/dev/video0
+#
+#kill 0

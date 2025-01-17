@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# mpv $( xclip -o )
+
+in=$( xclip -o )
+
+yt-dlp $in -o - | ffplay - -autoexit -loglevel quiet

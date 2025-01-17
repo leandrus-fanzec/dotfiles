@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Path que utilizo personalmente.
+
+import Public/img/screen/$(date +%s).png

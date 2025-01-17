@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Obtener el nombre del archivo actual
+file_name=$(basename "$1")
+file_path=$(dirname "$1")
+
+# Buscar archivos con el mismo nombre pero con extensiones diferentes
+pdf_file="$file_path/${file_name%.*}.pdf"
+html_file="$file_path/${file_name%.*}.html"
+
+# Comprobar si existen los archivos y abrir el primero que se encuentre
+if [ -f "$pdf_file" ]; then
+    xdg-open "$pdf_file" >/dev/null 2>&1 &
+elif [ -f "$html_file" ]; then
+    xdg-open "$html_file" >/dev/null 2>&1 &
+else
+    echo "No se encontraron archivos PDF o HTML con el mismo nombre en este directorio."
+fi

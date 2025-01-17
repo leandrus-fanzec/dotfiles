@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# El path es el que utilizo habitualmente.
+
+import -window root Public/img/screen/$(date +%s).png 
