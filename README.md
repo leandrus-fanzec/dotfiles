@@ -1,7 +1,22 @@
 
-# Configuración Personal DWM en Gentoo
+#+TITLE: OPENBSD DOTFILES
+#+AUTOR: LEANDRUS FANZEC
 
-## Brese Presentación 
+* LEAME
 
-Lo que aquí se encuentra, no se trata nada más que la configuración personal
-que utilizo a diario en mi computador personal.
+Lo que aqui se encuentra es la configuracion personal que utilizo en
+OpenBSD.
+
+Se trata de una configuracion que pretende mantener la originalidad
+del sistema, por dicho motivo se utiliza FVWM.
+
+** Por que?
+
+Porque no se encuentra casi ninguna informacion del uso de FVWM en
+OpenBSD y me parece una buena experiencia descubrir el uso por defecto
+elegida sus desarrolladores.
+
+*** Atencion 
+
+Este texto esta escrito con MG y no me permite la utilizacion de
+acentos ortograficos, perdon.
