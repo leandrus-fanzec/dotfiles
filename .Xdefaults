@@ -1,6 +1,10 @@
 XTerm*loginShell:true
 
 *.font: xft: Cascadia Code PL:size=8
+xterm*background: black
+xterm*foreground: white
+
+xterm*scrollBar: false
 
 *VT100*translations:      #override \n\
 		Ctrl <Key> +:       larger-vt-font() \n\

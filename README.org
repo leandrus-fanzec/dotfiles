@@ -1,25 +1,15 @@
-#+TITLE: OPENBSD - LEANDRUS FANZEC 
+#+TITLE: OPENBSD DWM - LEANDRUS FANZEC 
 #+AUTOR: LEANDRUS FANZEC
 
 ---------
 
-[[img.png]]
+* OpenBSD / DWM Minimo
 
+Esta es la configuracion que generalmente utilizo en OpenBSD.
 
-* LEAME
+Se ha tratado de mantener una configuracion minima y simple.
 
-Lo que aqui se encuentra es la configuracion personal que utilizo en
-OpenBSD.
-
-Se trata de una configuracion que pretende mantener la originalidad
-del sistema, por dicho motivo se utiliza *FVWM*.
-
-** Por que?
-
-Porque no se encuentra casi ninguna informacion del uso de FVWM en
-OpenBSD y me parece una buena experiencia descubrir /el uso por defecto
-elegida sus desarrolladores/.
-
+---------
 *** Atencion 
 
 Este texto esta escrito con MG y no me permite la utilizacion de
