@@ -94,14 +94,47 @@
 (use-package org-modern)
 (global-org-modern-mode)
 
+(use-package spacious-padding)
 (require 'spacious-padding)
 (spacious-padding-mode 1)
 ;; Set a key binding if you need to toggle spacious padding.
 (define-key global-map (kbd "<f8>") #'spacious-padding-mode)
 
-;; Load the theme of your choice.
-(load-theme 'modus-operandi)
-(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
+;; Make customisations that affect Emacs faces BEFORE loading a theme
+;; (any change needs a theme re-load to take effect).
+(require 'ef-themes)
+
+;; If you like two specific themes and want to switch between them, you
+;; can specify them in `ef-themes-to-toggle' and then invoke the command
+;; `ef-themes-toggle'.  All the themes are included in the variable
+;; `ef-themes-collection'.
+(setq ef-themes-to-toggle '(ef-duo-light ef-tritanopia-dark))
+
+(setq ef-themes-headings ; read the manual's entry or the doc string
+      '((0 variable-pitch light 1.9)
+        (1 variable-pitch light 1.8)
+        (2 variable-pitch regular 1.7)
+        (3 variable-pitch regular 1.6)
+        (4 variable-pitch regular 1.5)
+        (5 variable-pitch 1.4) ; absence of weight means `bold'
+        (6 variable-pitch 1.3)
+        (7 variable-pitch 1.2)
+        (t variable-pitch 1.1)))
+
+;; They are nil by default...
+(setq ef-themes-mixed-fonts t
+      ef-themes-variable-pitch-ui t)
+
+;; Disable all other themes to avoid awkward blending:
+(mapc #'disable-theme custom-enabled-themes)
+
+;; Load the theme of choice:
+(load-theme 'ef-duo-light :no-confirm)
+
+;; OR use this to load the theme which also calls `ef-themes-post-load-hook':
+(ef-themes-select 'ef-duo-light)
+
+(define-key global-map (kbd "<f5>") #'ef-themes-toggle)
 
 ;; Denote
 (use-package denote)
@@ -206,7 +239,7 @@
  ;; If there is more than one, they won't work right.
  '(flyspell-default-dictionary "es")
  '(package-selected-packages
-   '(olivetti denote spacious-padding org-modern company orderless vertico)))
+   '(ef-themes olivetti denote spacious-padding org-modern company orderless vertico)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
