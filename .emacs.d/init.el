@@ -102,6 +102,7 @@
 
 ;; Make customisations that affect Emacs faces BEFORE loading a theme
 ;; (any change needs a theme re-load to take effect).
+(use-package ef-themes)
 (require 'ef-themes)
 
 ;; If you like two specific themes and want to switch between them, you
